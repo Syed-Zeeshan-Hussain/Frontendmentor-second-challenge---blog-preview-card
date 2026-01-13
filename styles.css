@@ -1,0 +1,122 @@
+@layer reset {
+    *,
+    ::before,
+    ::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+@layer base {
+    :root {
+        --bg-color-main:hsl(47, 88%, 63%);
+        --bg-color-card: hsl(0, 0%, 100%);
+        --font-color-paragraph:hsl(0, 0%, 42%);
+        --font-color-heading:hsl(0, 0%, 7%);
+        --font-size-base:16px;
+        --font-base:'figtree'
+    }
+
+    body{
+        display: flex;
+        background-color: var(--bg-color-main);
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        font-family: var(--font-base);
+        font-size: var(--font-size-base);
+
+        main{
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-color-card);
+            width: 320px;
+            flex-wrap: wrap;
+            padding: 1rem;
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 8px 8px rgba(0, 0, 0, 1);
+            gap: 1rem;
+            text-align: left;
+
+            #initial-section{
+                img {
+                    max-width: 100%;
+                    border-radius: 7.5px;        
+                    }
+                nav{
+                    margin-block-start: 1.5rem;
+                    margin-block-end: 1rem;
+                    a{
+                        text-decoration: none;
+                        background-color: var(--bg-color-main);
+                        font-weight: 800;  
+                        border-radius: 5px;
+                        padding: 0.5rem 1rem;
+                        font-style: black;
+                        opacity: 1;
+                        transition: opacity 0.3s ease-in-out;
+                        &:hover{
+                            
+                            opacity: 0.7;
+                        }
+                        &:visited{
+                            color:var(--font-color-heading)
+                        }
+                    }
+                 }
+                 footer{
+                    font-style: var(--font-color-paragraph);
+                 }    
+        }
+
+        #theme-content{
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            p a{
+                color: var(--font-color-heading);
+                font-weight: 800;
+                text-decoration: none;
+                font-size: 1.2rem;
+                &:hover{
+                    color: var(--bg-color-main);
+                }
+
+                
+            }
+            p{
+                font-style: var(--font-color-paragraph);
+                line-height: 1.5rem
+            }   
+
+    }
+
+        footer{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            gap: 0.75rem;
+
+            img{
+                width: 40px;
+                height: 40px;
+            }
+
+            a{
+                text-decoration: none;
+                font-weight: 800;
+                &:visited{
+                    color: var(--font-color-heading);
+                }
+                &:hover{
+                    color: var(--bg-color-main);
+                }
+            }
+        }
+    }
+  }
+}
